@@ -116,13 +116,11 @@
 		60E4DAC8215BCC3A00B9833A /* rxswift-1 */ = {
 			isa = PBXGroup;
 			children = (
-				60E4DAC9215BCC3A00B9833A /* AppDelegate.swift */,
-				60E4DACB215BCC3A00B9833A /* ViewController.swift */,
-				60E4DACD215BCC3A00B9833A /* Main.storyboard */,
+				60E4DAFA215CDBC900B9833A /* Model */,
+				60E4DAFB215CDBD500B9833A /* View */,
+				60E4DAFC215CDBDE00B9833A /* Controller */,
 				60E4DAD3215BCC3A00B9833A /* Assets.xcassets */,
-				60E4DAD5215BCC3A00B9833A /* LaunchScreen.storyboard */,
 				60E4DAD8215BCC3A00B9833A /* Info.plist */,
-				60E4DAD0215BCC3A00B9833A /* rxswift_1.xcdatamodeld */,
 			);
 			path = "rxswift-1";
 			sourceTree = "<group>";
@@ -143,6 +141,32 @@
 				60E4DAEE215BCC3A00B9833A /* Info.plist */,
 			);
 			path = "rxswift-1UITests";
+			sourceTree = "<group>";
+		};
+		60E4DAFA215CDBC900B9833A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				60E4DAD0215BCC3A00B9833A /* rxswift_1.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		60E4DAFB215CDBD500B9833A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				60E4DACD215BCC3A00B9833A /* Main.storyboard */,
+				60E4DAD5215BCC3A00B9833A /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		60E4DAFC215CDBDE00B9833A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				60E4DAC9215BCC3A00B9833A /* AppDelegate.swift */,
+				60E4DACB215BCC3A00B9833A /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		87DFB70E98F662243B82F45E /* Pods */ = {
@@ -307,15 +331,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-rxswift-1Tests-checkManifestLockResult.txt",
 			);
@@ -329,15 +349,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-rxswift-1UITests-checkManifestLockResult.txt",
 			);
@@ -351,15 +367,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-rxswift-1-checkManifestLockResult.txt",
 			);
@@ -373,8 +385,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-rxswift-1/Pods-rxswift-1-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
@@ -383,8 +393,6 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
