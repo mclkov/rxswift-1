@@ -15,6 +15,8 @@ class MoviesVC:
     // Outlets
     @IBOutlet weak var moviesTV: UITableView!
     
+    let movies = ["HP", "Matrix"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +24,23 @@ class MoviesVC:
         moviesTV.delegate = self
         
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        if let cell = moviesTV.dequeueReusableCell(withIdentifier: MOVIE_CELL, for: indexPath)
+        {
+            
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return movies.count
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int
+    {
+        return 1
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,3 +8,4 @@
 
 import Foundation
 
+let MOVIE_CELL = "movieCell"
