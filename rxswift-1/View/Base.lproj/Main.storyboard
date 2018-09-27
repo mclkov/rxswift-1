@@ -34,7 +34,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Movies" id="cP9-k8-SRf"/>
                     <connections>
-                        <outlet property="tableView" destination="3JY-1J-8BS" id="vuz-zg-1Us"/>
+                        <outlet property="moviesTV" destination="3JY-1J-8BS" id="dSq-Ux-8L1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VzB-q3-XPc" userLabel="First Responder" sceneMemberID="firstResponder"/>

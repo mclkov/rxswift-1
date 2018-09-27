@@ -8,13 +8,19 @@
 
 import UIKit
 
-class MoviesVC: UITableViewController {
+class MoviesVC:
+    UITableViewController
+{
     
     // Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var moviesTV: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        moviesTV.dataSource = self
+        moviesTV.delegate = self
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
