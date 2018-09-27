@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		60E4DACA215BCC3A00B9833A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E4DAC9215BCC3A00B9833A /* AppDelegate.swift */; };
-		60E4DACC215BCC3A00B9833A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E4DACB215BCC3A00B9833A /* ViewController.swift */; };
+		60E4DACC215BCC3A00B9833A /* MoviesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E4DACB215BCC3A00B9833A /* MoviesVC.swift */; };
 		60E4DACF215BCC3A00B9833A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E4DACD215BCC3A00B9833A /* Main.storyboard */; };
 		60E4DAD2215BCC3A00B9833A /* rxswift_1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 60E4DAD0215BCC3A00B9833A /* rxswift_1.xcdatamodeld */; };
 		60E4DAD4215BCC3A00B9833A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60E4DAD3215BCC3A00B9833A /* Assets.xcassets */; };
 		60E4DAD7215BCC3A00B9833A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E4DAD5215BCC3A00B9833A /* LaunchScreen.storyboard */; };
 		60E4DAE2215BCC3A00B9833A /* rxswift_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E4DAE1215BCC3A00B9833A /* rxswift_1Tests.swift */; };
 		60E4DAED215BCC3A00B9833A /* rxswift_1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E4DAEC215BCC3A00B9833A /* rxswift_1UITests.swift */; };
+		60E4DB00215CDE5600B9833A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E4DAFF215CDE5600B9833A /* Constants.swift */; };
 		66E18BC741BF49E23F2F0253 /* Pods_rxswift_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C00C39FFE46538125A98B3 /* Pods_rxswift_1.framework */; };
 		B882A08276D83B03D5CFBEB1 /* Pods_rxswift_1UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A77FF815CBFA17AF5E6E37 /* Pods_rxswift_1UITests.framework */; };
 		CC1B710AACB6257DE083546D /* Pods_rxswift_1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6AF1AAA2DBD181B03021E9 /* Pods_rxswift_1Tests.framework */; };
@@ -44,7 +45,7 @@
 		5DF2AE84D26BC60CC784F33A /* Pods-rxswift-1UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxswift-1UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rxswift-1UITests/Pods-rxswift-1UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		60E4DAC6215BCC3A00B9833A /* rxswift-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rxswift-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E4DAC9215BCC3A00B9833A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		60E4DACB215BCC3A00B9833A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		60E4DACB215BCC3A00B9833A /* MoviesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesVC.swift; sourceTree = "<group>"; };
 		60E4DACE215BCC3A00B9833A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60E4DAD1215BCC3A00B9833A /* rxswift_1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = rxswift_1.xcdatamodel; sourceTree = "<group>"; };
 		60E4DAD3215BCC3A00B9833A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 		60E4DAE8215BCC3A00B9833A /* rxswift-1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "rxswift-1UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E4DAEC215BCC3A00B9833A /* rxswift_1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rxswift_1UITests.swift; sourceTree = "<group>"; };
 		60E4DAEE215BCC3A00B9833A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60E4DAFF215CDE5600B9833A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		76A77FF815CBFA17AF5E6E37 /* Pods_rxswift_1UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rxswift_1UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B6AF1AAA2DBD181B03021E9 /* Pods_rxswift_1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rxswift_1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF01CB16F8137C0A9A95E8F /* Pods-rxswift-1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxswift-1Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rxswift-1Tests/Pods-rxswift-1Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		60E4DAC8215BCC3A00B9833A /* rxswift-1 */ = {
 			isa = PBXGroup;
 			children = (
+				60E4DAFD215CDE3D00B9833A /* Utilities */,
 				60E4DAFA215CDBC900B9833A /* Model */,
 				60E4DAFB215CDBD500B9833A /* View */,
 				60E4DAFC215CDBDE00B9833A /* Controller */,
@@ -164,9 +167,17 @@
 			isa = PBXGroup;
 			children = (
 				60E4DAC9215BCC3A00B9833A /* AppDelegate.swift */,
-				60E4DACB215BCC3A00B9833A /* ViewController.swift */,
+				60E4DACB215BCC3A00B9833A /* MoviesVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		60E4DAFD215CDE3D00B9833A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				60E4DAFF215CDE5600B9833A /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		87DFB70E98F662243B82F45E /* Pods */ = {
@@ -412,8 +423,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				60E4DAD2215BCC3A00B9833A /* rxswift_1.xcdatamodeld in Sources */,
-				60E4DACC215BCC3A00B9833A /* ViewController.swift in Sources */,
+				60E4DACC215BCC3A00B9833A /* MoviesVC.swift in Sources */,
 				60E4DACA215BCC3A00B9833A /* AppDelegate.swift in Sources */,
+				60E4DB00215CDE5600B9833A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
