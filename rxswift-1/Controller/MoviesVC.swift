@@ -15,7 +15,10 @@ class MoviesVC:
     // Outlets
     @IBOutlet weak var moviesTV: UITableView!
     
-    let movies = ["HP", "Matrix"]
+    let movies = [
+        Movie(title: "Harry Pottr"),
+        Movie(title: "Matrix")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +31,12 @@ class MoviesVC:
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        if let cell = moviesTV.dequeueReusableCell(withIdentifier: MOVIE_CELL, for: indexPath)
+        if let cell = moviesTV.dequeueReusableCell(withIdentifier: MOVIE_CELL, for: indexPath) as? MovieCell
         {
-            
+            let movie = movies[indexPath.row]
+            cell.configureCell(movie: movie)
         }
+        return MovieCell()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
