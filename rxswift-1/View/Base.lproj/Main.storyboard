@@ -83,6 +83,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gXA-ix-mEJ"/>
                     <connections>
+                        <outlet property="movieSearch" destination="DfH-1b-OPw" id="aMm-bi-T2g"/>
                         <outlet property="moviesTV" destination="Iua-Gw-drX" id="xBZ-m3-VTC"/>
                     </connections>
                 </viewController>

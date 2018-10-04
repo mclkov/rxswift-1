@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class MoviesVC:
     UIViewController
 {
     // Outlets
     @IBOutlet weak var moviesTV: UITableView!
+    @IBOutlet weak var movieSearch: UISearchBar!
     
     let movies = [
         Movie(title: "Harry Potter"),
@@ -24,6 +27,7 @@ class MoviesVC:
         
         moviesTV.dataSource = self
         moviesTV.delegate = self
+        
         
         // Do any additional setup after loading the view, typically from a nib.
     }
