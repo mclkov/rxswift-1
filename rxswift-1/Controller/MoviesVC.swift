@@ -16,7 +16,7 @@ class MoviesVC:
     @IBOutlet weak var moviesTV: UITableView!
     
     let movies = [
-        Movie(title: "Harry Pottr"),
+        Movie(title: "Harry Potter"),
         Movie(title: "Matrix")
     ]
     
@@ -35,6 +35,7 @@ class MoviesVC:
         {
             let movie = movies[indexPath.row]
             cell.configureCell(movie: movie)
+            return cell
         }
         return MovieCell()
     }
