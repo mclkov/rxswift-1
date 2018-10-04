@@ -9,7 +9,9 @@
 import UIKit
 
 class MoviesVC:
-    UITableViewController
+    UIViewController,
+    UITableViewDelegate,
+    UITableViewDataSource
 {
     
     // Outlets
@@ -29,7 +31,7 @@ class MoviesVC:
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         if let cell = moviesTV.dequeueReusableCell(withIdentifier: MOVIE_CELL, for: indexPath) as? MovieCell
         {
@@ -40,11 +42,11 @@ class MoviesVC:
         return MovieCell()
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int
+    func numberOfSections(in tableView: UITableView) -> Int
     {
         return 1
     }

@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-942" y="35"/>
         </scene>
-        <!--View Controller-->
+        <!--MoviesVC-->
         <scene sceneID="GlU-qc-juP">
             <objects>
-                <viewController id="oja-fk-bF0" sceneMemberID="viewController">
+                <viewController id="oja-fk-bF0" customClass="MoviesVC" customModule="rxswift_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RsA-XF-Y4W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,13 +37,28 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Anp-OK-lke">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" id="Anp-OK-lke" customClass="MovieCell" customModule="rxswift_1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Anp-OK-lke" id="sEZ-5W-XdG">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poO-Js-5cz">
+                                                    <rect key="frame" x="10" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="poO-Js-5cz" firstAttribute="centerY" secondItem="sEZ-5W-XdG" secondAttribute="centerY" id="4kf-kG-2BL"/>
+                                                <constraint firstItem="poO-Js-5cz" firstAttribute="leading" secondItem="sEZ-5W-XdG" secondAttribute="leading" constant="10" id="bR7-eB-Tit"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="poO-Js-5cz" id="DQ5-0l-KRF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -64,6 +79,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gXA-ix-mEJ"/>
+                    <connections>
+                        <outlet property="moviesTV" destination="Iua-Gw-drX" id="xBZ-m3-VTC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I6I-2A-88W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
