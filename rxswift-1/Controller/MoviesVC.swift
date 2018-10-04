@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Alamofire
 
 class MoviesVC:
     UIViewController
@@ -29,9 +30,15 @@ class MoviesVC:
         moviesTV.delegate = self
         
         movieSearch.rx.text
-            .throttle(5, scheduler: MainScheduler.instance)
-            .subscribe(onNext: { (element) in
-                print(element)
+            .orEmpty
+            .distinctUntilChanged()
+            .filter{ !$0.isEmpty }
+            .throttle(1, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { (query) in
+                let url = "http://www.omdbapi.com/?i=tt3896198&apikey=89fe8236&s=" + query
+                Alamofire.request(url).responseJSON(completionHandler: { (response) in
+                    <#code#>
+                })
         })
         
 //        movieSearch.rx.text.throttle(5, scheduler: MainScheduler.instance).subscribe(onNext: { (element) in
