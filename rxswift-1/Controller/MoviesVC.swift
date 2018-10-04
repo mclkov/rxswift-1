@@ -28,7 +28,15 @@ class MoviesVC:
         moviesTV.dataSource = self
         moviesTV.delegate = self
         
+        movieSearch.rx.text
+            .throttle(5, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { (element) in
+                print(element)
+        })
         
+//        movieSearch.rx.text.throttle(5, scheduler: MainScheduler.instance).subscribe(onNext: { (element) in
+//            print(element)
+//        }, onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>, onCompleted: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>, onDisposed: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
         // Do any additional setup after loading the view, typically from a nib.
     }
 }
