@@ -9,11 +9,8 @@
 import UIKit
 
 class MoviesVC:
-    UIViewController,
-    UITableViewDelegate,
-    UITableViewDataSource
+    UIViewController
 {
-    
     // Outlets
     @IBOutlet weak var moviesTV: UITableView!
     
@@ -30,7 +27,12 @@ class MoviesVC:
         
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
+}
+
+extension MoviesVC:
+    UITableViewDataSource,
+    UITableViewDelegate
+{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         if let cell = moviesTV.dequeueReusableCell(withIdentifier: MOVIE_CELL, for: indexPath) as? MovieCell
