@@ -10,7 +10,7 @@ import Foundation
 
 struct Movie
 {
-    private(set) public var title: String
+    public private(set) var title: String!
     
     init(title: String)
     {

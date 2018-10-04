@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Alamofire
+import SwiftyJSON
 
 class MoviesVC:
     UIViewController
@@ -18,10 +19,7 @@ class MoviesVC:
     @IBOutlet weak var moviesTV: UITableView!
     @IBOutlet weak var movieSearch: UISearchBar!
     
-    let movies = [
-        Movie(title: "Harry Potter"),
-        Movie(title: "Matrix")
-    ]
+    var movies = [Movie]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +31,34 @@ class MoviesVC:
             .orEmpty
             .distinctUntilChanged()
             .filter{ !$0.isEmpty }
-            .throttle(1, scheduler: MainScheduler.instance)
+            .throttle(0.5, scheduler: MainScheduler.instance)
             .subscribe(onNext: { (query) in
-                let url = "http://www.omdbapi.com/?i=tt3896198&apikey=89fe8236&s=" + query
+                let url = "https://www.omdbapi.com/?apikey=89fe8236&s=" + query
                 Alamofire.request(url).responseJSON(completionHandler: { (response) in
-                    <#code#>
+                    self.movies.removeAll()
+                    
+                    print(self.movies.count)
+                    guard let data = response.data else
+                    {
+                        return
+                    }
+                
+                    do
+                    {
+                        let json = try JSON(data: data)
+                        print(json)
+                        
+                        for movie in json["Search"]
+                        {
+                            let title = movie.1["Title"].stringValue
+                            let newMovie = Movie(title: title)
+                                
+                            self.movies.append(newMovie)
+                        }
+                    } catch {
+                        print(error)
+                    }
+                    self.moviesTV.reloadData()
                 })
         })
         
@@ -64,7 +85,7 @@ extension MoviesVC:
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        return self.movies.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int
