@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,14 +32,42 @@
                     <view key="view" contentMode="scaleToFill" id="RsA-XF-Y4W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Iua-Gw-drX">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Anp-OK-lke">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Anp-OK-lke" id="sEZ-5W-XdG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="DfH-1b-OPw">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Dlp-wh-GzA"/>
+                        <constraints>
+                            <constraint firstItem="DfH-1b-OPw" firstAttribute="leading" secondItem="RsA-XF-Y4W" secondAttribute="leading" id="84q-Bq-zMA"/>
+                            <constraint firstItem="Iua-Gw-drX" firstAttribute="top" secondItem="DfH-1b-OPw" secondAttribute="bottom" id="GjB-O1-4uw"/>
+                            <constraint firstItem="Iua-Gw-drX" firstAttribute="leading" secondItem="RsA-XF-Y4W" secondAttribute="leading" id="QdP-4G-jKV"/>
+                            <constraint firstAttribute="trailing" secondItem="Iua-Gw-drX" secondAttribute="trailing" id="cRW-rl-9wP"/>
+                            <constraint firstItem="DfH-1b-OPw" firstAttribute="top" secondItem="RsA-XF-Y4W" secondAttribute="top" constant="64" id="dNu-m1-Ic2"/>
+                            <constraint firstAttribute="trailing" secondItem="DfH-1b-OPw" secondAttribute="trailing" id="gas-83-5aL"/>
+                            <constraint firstAttribute="bottom" secondItem="Iua-Gw-drX" secondAttribute="bottom" id="zhq-7F-exc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gXA-ix-mEJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I6I-2A-88W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-57" y="35"/>
+            <point key="canvasLocation" x="-58.125" y="35"/>
         </scene>
     </scenes>
 </document>
