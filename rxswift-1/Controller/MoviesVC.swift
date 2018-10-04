@@ -31,28 +31,29 @@ class MoviesVC:
             .orEmpty
             .distinctUntilChanged()
             .filter{ !$0.isEmpty }
-            .throttle(0.5, scheduler: MainScheduler.instance)
+            .debounce(0.5, scheduler: MainScheduler.instance)
             .subscribe(onNext: { (query) in
-                let url = "https://www.omdbapi.com/?apikey=89fe8236&s=" + query
-                Alamofire.request(url).responseJSON(completionHandler: { (response) in
+                guard let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
+                    //Invalid URL
+                    return
+                }
+                
+                let url = "https://www.omdbapi.com/?apikey=89fe8236&s=" + encodedQuery
+                Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
                     self.movies.removeAll()
-                    
-                    print(self.movies.count)
                     guard let data = response.data else
                     {
                         return
                     }
-                
+                    
                     do
                     {
                         let json = try JSON(data: data)
-                        print(json)
-                        
                         for movie in json["Search"]
                         {
                             let title = movie.1["Title"].stringValue
                             let newMovie = Movie(title: title)
-                                
+                            
                             self.movies.append(newMovie)
                         }
                     } catch {
@@ -60,7 +61,7 @@ class MoviesVC:
                     }
                     self.moviesTV.reloadData()
                 })
-        })
+            })
         
 //        movieSearch.rx.text.throttle(5, scheduler: MainScheduler.instance).subscribe(onNext: { (element) in
 //            print(element)
