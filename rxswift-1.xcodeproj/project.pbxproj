@@ -18,6 +18,7 @@
 		60E4DB00215CDE5600B9833A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E4DAFF215CDE5600B9833A /* Constants.swift */; };
 		60E4DB02215CE29B00B9833A /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E4DB01215CE29B00B9833A /* MovieCell.swift */; };
 		60E4DB04215CE4A100B9833A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E4DB03215CE4A100B9833A /* Movie.swift */; };
+		60E4DB06216DCE4400B9833A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60E4DB05216DCE4400B9833A /* GoogleService-Info.plist */; };
 		66E18BC741BF49E23F2F0253 /* Pods_rxswift_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C00C39FFE46538125A98B3 /* Pods_rxswift_1.framework */; };
 		B882A08276D83B03D5CFBEB1 /* Pods_rxswift_1UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A77FF815CBFA17AF5E6E37 /* Pods_rxswift_1UITests.framework */; };
 		CC1B710AACB6257DE083546D /* Pods_rxswift_1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6AF1AAA2DBD181B03021E9 /* Pods_rxswift_1Tests.framework */; };
@@ -62,6 +63,7 @@
 		60E4DAFF215CDE5600B9833A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		60E4DB01215CE29B00B9833A /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		60E4DB03215CE4A100B9833A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		60E4DB05216DCE4400B9833A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		76A77FF815CBFA17AF5E6E37 /* Pods_rxswift_1UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rxswift_1UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B6AF1AAA2DBD181B03021E9 /* Pods_rxswift_1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rxswift_1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF01CB16F8137C0A9A95E8F /* Pods-rxswift-1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxswift-1Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rxswift-1Tests/Pods-rxswift-1Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		60E4DABD215BCC3A00B9833A = {
 			isa = PBXGroup;
 			children = (
+				60E4DB05216DCE4400B9833A /* GoogleService-Info.plist */,
 				60E4DAC8215BCC3A00B9833A /* rxswift-1 */,
 				60E4DAE0215BCC3A00B9833A /* rxswift-1Tests */,
 				60E4DAEB215BCC3A00B9833A /* rxswift-1UITests */,
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60E4DAD7215BCC3A00B9833A /* LaunchScreen.storyboard in Resources */,
+				60E4DB06216DCE4400B9833A /* GoogleService-Info.plist in Resources */,
 				60E4DAD4215BCC3A00B9833A /* Assets.xcassets in Resources */,
 				60E4DACF215BCC3A00B9833A /* Main.storyboard in Resources */,
 			);
@@ -405,16 +409,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-rxswift-1/Pods-rxswift-1-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
