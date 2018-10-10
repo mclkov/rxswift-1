@@ -131,6 +131,9 @@
                                                 <constraint firstItem="fYI-Gx-BMx" firstAttribute="centerY" secondItem="DZg-Yb-Hiq" secondAttribute="centerY" id="s1D-hT-YyW"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="fYI-Gx-BMx" id="ZRF-VC-8QH"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
