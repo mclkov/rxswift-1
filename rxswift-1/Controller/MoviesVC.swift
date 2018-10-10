@@ -91,7 +91,7 @@ extension MoviesVC:
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedMovie = movies[indexPath.row]
-        dbref.child("favorites").childByAutoId().setValue(selectedMovie.title)
+        dbref.child("favorites").childByAutoId().setValue(["movie-title": selectedMovie.title])
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

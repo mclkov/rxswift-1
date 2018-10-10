@@ -9,3 +9,4 @@
 import Foundation
 
 let MOVIE_CELL = "movieCell"
+let FAVORITE_MOVIE_CELL = "favoriteMovieCell"

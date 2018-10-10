@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -83,7 +84,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bal-GD-Wb5"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gXA-ix-mEJ"/>
+                    <navigationItem key="navigationItem" id="gXA-ix-mEJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="d7l-vv-PFd">
+                            <connections>
+                                <segue destination="WMK-Zr-di5" kind="show" id="KRy-A8-oxt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="movieSearch" destination="DfH-1b-OPw" id="aMm-bi-T2g"/>
                         <outlet property="moviesTV" destination="Iua-Gw-drX" id="xBZ-m3-VTC"/>
@@ -93,16 +100,53 @@
             </objects>
             <point key="canvasLocation" x="-58.125" y="35"/>
         </scene>
-        <!--Favorite MoviesVC-->
+        <!--Favorite movies-->
         <scene sceneID="Jru-q7-qch">
             <objects>
-                <viewController id="WMK-Zr-di5" customClass="FavoriteMoviesVC" customModule="rxswift_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Favorite movies" id="WMK-Zr-di5" customClass="FavoriteMoviesVC" customModule="rxswift_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mbV-6L-4Yd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7TO-2n-V5j">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoriteMovieCell" id="zrr-kg-VO4" customClass="MovieCell" customModule="rxswift_1" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zrr-kg-VO4" id="DZg-Yb-Hiq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYI-Gx-BMx">
+                                                    <rect key="frame" x="23" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fYI-Gx-BMx" firstAttribute="leading" secondItem="DZg-Yb-Hiq" secondAttribute="leadingMargin" constant="8" id="1EH-cw-Iqz"/>
+                                                <constraint firstItem="fYI-Gx-BMx" firstAttribute="centerY" secondItem="DZg-Yb-Hiq" secondAttribute="centerY" id="s1D-hT-YyW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aUr-SA-PCc" firstAttribute="bottom" secondItem="7TO-2n-V5j" secondAttribute="bottom" id="VAC-75-ReR"/>
+                            <constraint firstItem="7TO-2n-V5j" firstAttribute="top" secondItem="aUr-SA-PCc" secondAttribute="top" id="cE1-Lr-QeV"/>
+                            <constraint firstItem="aUr-SA-PCc" firstAttribute="trailing" secondItem="7TO-2n-V5j" secondAttribute="trailing" id="meG-ee-wo1"/>
+                            <constraint firstItem="7TO-2n-V5j" firstAttribute="leading" secondItem="aUr-SA-PCc" secondAttribute="leading" id="mky-S0-coo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aUr-SA-PCc"/>
                     </view>
+                    <connections>
+                        <outlet property="favoritesTV" destination="7TO-2n-V5j" id="eAi-H8-2K5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lvt-I4-90N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

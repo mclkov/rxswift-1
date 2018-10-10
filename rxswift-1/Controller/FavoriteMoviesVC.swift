@@ -10,9 +10,16 @@ import UIKit
 
 class FavoriteMoviesVC: UIViewController {
 
+    // Outlets
+    @IBOutlet weak var favoritesTV: UITableView!
+    
+    var favoriteMovies = [Movie]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        favoritesTV.delegate = self
+        favoritesTV.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -32,4 +39,29 @@ class FavoriteMoviesVC: UIViewController {
     }
     */
 
+}
+
+extension FavoriteMoviesVC:
+    UITableViewDataSource,
+    UITableViewDelegate
+{
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        if let cell = favoritesTV.dequeueReusableCell(withIdentifier: FAVORITE_MOVIE_CELL, for: indexPath) as? MovieCell
+        {
+            let movie = favoriteMovies[indexPath.row]
+            cell.configureCell(movie: movie)
+            return cell
+        }
+        return MovieCell()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.favoriteMovies.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
+        return 1
+    }
 }
