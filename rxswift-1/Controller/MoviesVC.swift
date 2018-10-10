@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import Alamofire
 import SwiftyJSON
+import Firebase
 
 class MoviesVC:
     UIViewController
@@ -19,10 +20,13 @@ class MoviesVC:
     @IBOutlet weak var moviesTV: UITableView!
     @IBOutlet weak var movieSearch: UISearchBar!
     
+    var dbref: DatabaseReference!
     var movies = [Movie]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dbref = Database.database().reference()
         
         moviesTV.dataSource = self
         moviesTV.delegate = self
@@ -83,6 +87,11 @@ extension MoviesVC:
             return cell
         }
         return MovieCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedMovie = movies[indexPath.row]
+        dbref.child("favorites").childByAutoId().setValue(selectedMovie.title)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -80,6 +81,7 @@
                             <constraint firstAttribute="trailing" secondItem="DfH-1b-OPw" secondAttribute="trailing" id="gas-83-5aL"/>
                             <constraint firstAttribute="bottom" secondItem="Iua-Gw-drX" secondAttribute="bottom" id="zhq-7F-exc"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Bal-GD-Wb5"/>
                     </view>
                     <navigationItem key="navigationItem" id="gXA-ix-mEJ"/>
                     <connections>
@@ -90,6 +92,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I6I-2A-88W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-58.125" y="35"/>
+        </scene>
+        <!--Favorite MoviesVC-->
+        <scene sceneID="Jru-q7-qch">
+            <objects>
+                <viewController id="WMK-Zr-di5" customClass="FavoriteMoviesVC" customModule="rxswift_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mbV-6L-4Yd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="aUr-SA-PCc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lvt-I4-90N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="863" y="35"/>
         </scene>
     </scenes>
 </document>
