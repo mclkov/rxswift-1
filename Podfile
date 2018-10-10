@@ -11,6 +11,7 @@ target 'rxswift-1' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'Firebase/Core'
+  pod 'Firebase/Database'
 
   target 'rxswift-1Tests' do
     inherit! :search_paths
